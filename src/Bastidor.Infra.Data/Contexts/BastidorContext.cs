@@ -18,14 +18,15 @@ namespace Bastidor.Infra.Data.Contexts
 
         private readonly IConfigurationRoot configurationRoot;
 
-        //public BastidorContext(IConfigurationRoot configurationRoot)
-        //{
-        //    this.configurationRoot = configurationRoot;
-        //}
+        public BastidorContext(IConfigurationRoot configurationRoot)
+        {
+            this.configurationRoot = configurationRoot;
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=localhost;database=bastidor;user=root;password=");
+
+            optionsBuilder.UseMySql(configurationRoot.GetConnectionString("BastidorDB"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

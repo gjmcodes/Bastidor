@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Domain", "1 - Domain", "{15F3952B-E830-4278-BD34-9D0B8A94CCDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bastidor.Domain.Core", "Bastidor.Domain.Core\Bastidor.Domain.Core.csproj", "{CFED12A3-8F37-4C2B-92D0-C0BCF86650A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bastidor.Domain.Core", "Bastidor.Domain.Core\Bastidor.Domain.Core.csproj", "{CFED12A3-8F37-4C2B-92D0-C0BCF86650A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bastidor.Domain", "Bastidor.Domain\Bastidor.Domain.csproj", "{64AECBEB-476A-4F85-9026-9EABF4DA2B75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bastidor.Domain", "Bastidor.Domain\Bastidor.Domain.csproj", "{64AECBEB-476A-4F85-9026-9EABF4DA2B75}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infra", "2 - Infra", "{AEA4911E-19DB-4910-A51E-F68CFD7200FD}"
 EndProject
@@ -15,9 +15,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.1 - Data", "2.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.2 - CrossCutting", "2.2 - CrossCutting", "{AEA4BDCD-5800-4FC4-B6C6-06599FFD60C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bastidor.Infra.Data", "Bastidor.Infra.Data\Bastidor.Infra.Data.csproj", "{C1DE7950-5A57-43F4-A9C8-F46B51FC324F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bastidor.Infra.Data", "Bastidor.Infra.Data\Bastidor.Infra.Data.csproj", "{C1DE7950-5A57-43F4-A9C8-F46B51FC324F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bastidor.ConsoleTest", "Bastidor.ConsoleTest\Bastidor.ConsoleTest.csproj", "{2E71F560-688B-4F8C-B61B-978DDAFBAB2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bastidor.ConsoleTest", "Bastidor.ConsoleTest\Bastidor.ConsoleTest.csproj", "{2E71F560-688B-4F8C-B61B-978DDAFBAB2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{991F983F-49AB-4A03-A0A9-A61B475012EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Presentation", "4 - Presentation", "{AF38E50E-B89C-48FA-AE04-7546D672DF0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bastidor.API", "Bastidor.API\Bastidor.API.csproj", "{565D8389-AFDD-418F-AF82-046CB7872ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bastidor.Application", "Bastidor.Application\Bastidor.Application.csproj", "{2BECD94F-7FBB-4040-A3BD-843EE7CCFAC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bastidor.CrossCutting.IoC", "Bastidor.CrossCutting.IoC\Bastidor.CrossCutting.IoC.csproj", "{71D25B74-72D1-4D10-AE7A-8984197E8927}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +51,18 @@ Global
 		{2E71F560-688B-4F8C-B61B-978DDAFBAB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E71F560-688B-4F8C-B61B-978DDAFBAB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E71F560-688B-4F8C-B61B-978DDAFBAB2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{565D8389-AFDD-418F-AF82-046CB7872ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{565D8389-AFDD-418F-AF82-046CB7872ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{565D8389-AFDD-418F-AF82-046CB7872ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{565D8389-AFDD-418F-AF82-046CB7872ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BECD94F-7FBB-4040-A3BD-843EE7CCFAC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BECD94F-7FBB-4040-A3BD-843EE7CCFAC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BECD94F-7FBB-4040-A3BD-843EE7CCFAC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BECD94F-7FBB-4040-A3BD-843EE7CCFAC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71D25B74-72D1-4D10-AE7A-8984197E8927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71D25B74-72D1-4D10-AE7A-8984197E8927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71D25B74-72D1-4D10-AE7A-8984197E8927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71D25B74-72D1-4D10-AE7A-8984197E8927}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +73,9 @@ Global
 		{524AC397-99A6-40C2-AAE8-09DF49338761} = {AEA4911E-19DB-4910-A51E-F68CFD7200FD}
 		{AEA4BDCD-5800-4FC4-B6C6-06599FFD60C5} = {AEA4911E-19DB-4910-A51E-F68CFD7200FD}
 		{C1DE7950-5A57-43F4-A9C8-F46B51FC324F} = {524AC397-99A6-40C2-AAE8-09DF49338761}
+		{565D8389-AFDD-418F-AF82-046CB7872ECE} = {AF38E50E-B89C-48FA-AE04-7546D672DF0C}
+		{2BECD94F-7FBB-4040-A3BD-843EE7CCFAC3} = {991F983F-49AB-4A03-A0A9-A61B475012EF}
+		{71D25B74-72D1-4D10-AE7A-8984197E8927} = {AEA4BDCD-5800-4FC4-B6C6-06599FFD60C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D8A9E3B-1231-4F91-8950-C916DFBDE898}

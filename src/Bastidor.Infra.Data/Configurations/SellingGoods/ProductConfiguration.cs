@@ -27,3 +27,4 @@ namespace Bastidor.Infra.Data.Configurations.SellingGoods
 
         }
     }
+}

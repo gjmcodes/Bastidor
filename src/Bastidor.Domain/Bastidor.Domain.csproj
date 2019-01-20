@@ -5,12 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Payments\Events\" />
     <Folder Include="Personel\Commands\" />
     <Folder Include="Personel\Events\" />
     <Folder Include="Personel\Repository\" />
     <Folder Include="Sales\Commands\" />
     <Folder Include="Sales\Events\" />
-    <Folder Include="Sales\Repository\" />
+    <Folder Include="Sales\Repositories\" />
     <Folder Include="SellingGoods\Commands\" />
     <Folder Include="SellingGoods\Events\" />
     <Folder Include="SellingGoods\Repository\" />
