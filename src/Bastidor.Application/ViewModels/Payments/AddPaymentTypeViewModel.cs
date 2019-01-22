@@ -1,6 +1,7 @@
-﻿namespace Bastidor.Application.ViewModels.Payment
+﻿namespace Bastidor.Application.ViewModels.Payments
 {
     public class AddPaymentTypeViewModel
     {
+
     }
 }

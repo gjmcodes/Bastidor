@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Bastidor.Domain.Core.Events;
+using System;
 
-namespace Bastidor.Domain.Notifications
+namespace Bastidor.Domain.Core.Notifications
 {
-    public class DomainNotification
+    public class DomainNotification : Event
     {
         public Guid DomainNotificationId { get; private set; }
         public string Key { get; private set; }

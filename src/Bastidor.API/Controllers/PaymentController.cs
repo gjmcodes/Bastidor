@@ -11,7 +11,7 @@ namespace Bastidor.API.Controllers
         [HttpPost]
         public Task<IActionResult> AddPaymentType(AddPaymentTypeViewModel model)
         {
-
+            return Ok();
         }
     }
 }

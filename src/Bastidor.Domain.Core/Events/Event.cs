@@ -1,8 +1,9 @@
-﻿using System;
+﻿using MediatR;
+using System;
 
 namespace Bastidor.Domain.Core.Events
 {
-    public class Event
+    public class Event : INotification
     {
         public DateTime Timestamp { get; private set; }
 
