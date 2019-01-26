@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Bastidor.Domain.Interfaces
 {
-    class IReadOnlyRepository
+    public interface IReadOnlyRepository : IDisposable
     {
     }
 }

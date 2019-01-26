@@ -24,5 +24,10 @@ namespace Bastidor.Domain.Sales
         public virtual ICollection<SaleProduct> Products { get; private set; }
         public virtual SalePayment SalePayment { get; private set; }
         public virtual Employee Employee { get; private set; }
+
+        protected override void ValidateRules()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

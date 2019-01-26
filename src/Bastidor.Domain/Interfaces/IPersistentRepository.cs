@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Bastidor.Domain.Core.Models;
+using System;
 
 namespace Bastidor.Domain.Interfaces
 {
-    class IPersistentRepository
+    public interface IPersistentRepository<T> : IDisposable where T : Entity<T>
     {
+        void Add(T obj);
     }
 }

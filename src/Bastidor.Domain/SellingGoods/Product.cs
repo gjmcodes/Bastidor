@@ -13,5 +13,10 @@ namespace Bastidor.Domain.SellingGoods
 
         //EF Navigation
         public virtual ICollection<SaleProduct> Sales { get; private set; }
+
+        protected override void ValidateRules()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

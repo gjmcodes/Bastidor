@@ -27,9 +27,9 @@ namespace Bastidor.Application.Services
         protected OperationResult OperationResult()
         {
             var validations = notificationHandler.GetNotifications();
-            var ops = new OperationResult(validations.ToDictionary(x => x.Key, y => y.Value));
+            var opResult = new OperationResult(validations.ToDictionary(x => x.Key, y => y.Value));
 
-            return ops;
+            return opResult;
         }
 
         public void Dispose()

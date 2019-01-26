@@ -1,4 +1,5 @@
-﻿using Bastidor.Application.ViewModels.Payment;
+﻿using Bastidor.Application.Services.Payments;
+using Bastidor.Application.ViewModels.Payments;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -8,10 +9,24 @@ namespace Bastidor.API.Controllers
     [ApiController]
     public class PaymentController : ControllerBase
     {
-        [HttpPost]
-        public Task<IActionResult> AddPaymentType(AddPaymentTypeViewModel model)
+        private readonly IPaymentAppService _paymentAppService;
+
+        public PaymentController(IPaymentAppService paymentAppService)
         {
-            return Ok();
+            _paymentAppService = paymentAppService;
+        }
+
+
+        [HttpPost]
+        [Route("AddPaymentType")]
+        public async Task<IActionResult> AddPaymentType(AddPaymentTypeViewModel model)
+        {
+            var result = await _paymentAppService.AddPaymentAsync(model);
+
+            if (result.IsValid)
+                return Ok(result);
+
+            return BadRequest(result.Validations);
         }
     }
 }

@@ -17,5 +17,13 @@ namespace Bastidor.Domain.Core.Models
 
         public ValidationResult ValidationResult { get; protected set; }
 
+        protected abstract void ValidateRules();
+
+        public bool IsValid()
+        {
+            ValidateRules();
+
+            return ValidationResult.IsValid;
+        }
     }
 }

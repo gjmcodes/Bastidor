@@ -1,8 +1,9 @@
-﻿using System;
+﻿using MediatR;
+using System;
 
 namespace Bastidor.Domain.Core.Commands
 {
-    public class Command
+    public class Command : IRequest
     {
 
         public Command()

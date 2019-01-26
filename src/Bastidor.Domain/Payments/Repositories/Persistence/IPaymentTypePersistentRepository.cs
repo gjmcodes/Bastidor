@@ -1,6 +1,8 @@
-﻿namespace Bastidor.Domain.Payments.Repositories.Persistence
+﻿using Bastidor.Domain.Interfaces;
+
+namespace Bastidor.Domain.Payments.Repositories.Persistence
 {
-    public interface IPaymentTypePersistentRepository
+    public interface IPaymentTypePersistentRepository : IPersistentRepository<PaymentType>
     {
     }
 }

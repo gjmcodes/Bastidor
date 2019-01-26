@@ -18,5 +18,10 @@ namespace Bastidor.Domain.Sales
         //EF Navigations
         public virtual PaymentType PaymentType { get; private set; }
         public virtual Sale Sale { get; private set; }
+
+        protected override void ValidateRules()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
