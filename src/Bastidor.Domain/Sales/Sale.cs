@@ -9,8 +9,6 @@ namespace Bastidor.Domain.Sales
     {
         public Sale(string customerName, string employeeId)
         {
-            this.Id = Guid.NewGuid().ToString();
-
             CustomerName = customerName;
             EmployeeId = employeeId;
         }

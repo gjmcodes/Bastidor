@@ -6,7 +6,12 @@ namespace Bastidor.Infra.Data.UoW
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private BastidorContext context;
+        private readonly BastidorContext context;
+
+        public UnitOfWork(BastidorContext context)
+        {
+            this.context = context;
+        }
 
         public async Task<bool> CommitAsync()
         {

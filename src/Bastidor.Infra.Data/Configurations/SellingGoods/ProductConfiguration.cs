@@ -23,6 +23,10 @@ namespace Bastidor.Infra.Data.Configurations.SellingGoods
              .HasColumnType("VARCHAR(150)")
              .IsRequired();
 
+            builder.HasMany(e => e.Sales)
+                .WithOne(e => e.Product)
+                .HasForeignKey(e => e.ProductId);
+
             base.Configure(builder);
 
         }

@@ -8,9 +8,9 @@ namespace Bastidor.Domain.Core.Commands
 
         public Command()
         {
-            TimeStamp = DateTime.Now;
+            //TimeStamp = DateTime.Now;
         }
 
-        public DateTime TimeStamp { get; private set; }
+        //public DateTime TimeStamp { get; private set; }
     }
 }

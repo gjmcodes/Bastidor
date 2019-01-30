@@ -17,17 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.2 - CrossCutting", "2.2 -
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bastidor.Infra.Data", "Bastidor.Infra.Data\Bastidor.Infra.Data.csproj", "{C1DE7950-5A57-43F4-A9C8-F46B51FC324F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bastidor.ConsoleTest", "Bastidor.ConsoleTest\Bastidor.ConsoleTest.csproj", "{2E71F560-688B-4F8C-B61B-978DDAFBAB2B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{991F983F-49AB-4A03-A0A9-A61B475012EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Presentation", "4 - Presentation", "{AF38E50E-B89C-48FA-AE04-7546D672DF0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bastidor.API", "Bastidor.API\Bastidor.API.csproj", "{565D8389-AFDD-418F-AF82-046CB7872ECE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bastidor.API", "Bastidor.API\Bastidor.API.csproj", "{565D8389-AFDD-418F-AF82-046CB7872ECE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bastidor.Application", "Bastidor.Application\Bastidor.Application.csproj", "{2BECD94F-7FBB-4040-A3BD-843EE7CCFAC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bastidor.Application", "Bastidor.Application\Bastidor.Application.csproj", "{2BECD94F-7FBB-4040-A3BD-843EE7CCFAC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bastidor.CrossCutting.IoC", "Bastidor.CrossCutting.IoC\Bastidor.CrossCutting.IoC.csproj", "{71D25B74-72D1-4D10-AE7A-8984197E8927}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bastidor.CrossCutting.IoC", "Bastidor.CrossCutting.IoC\Bastidor.CrossCutting.IoC.csproj", "{71D25B74-72D1-4D10-AE7A-8984197E8927}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +45,6 @@ Global
 		{C1DE7950-5A57-43F4-A9C8-F46B51FC324F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1DE7950-5A57-43F4-A9C8-F46B51FC324F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1DE7950-5A57-43F4-A9C8-F46B51FC324F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2E71F560-688B-4F8C-B61B-978DDAFBAB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E71F560-688B-4F8C-B61B-978DDAFBAB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E71F560-688B-4F8C-B61B-978DDAFBAB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E71F560-688B-4F8C-B61B-978DDAFBAB2B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{565D8389-AFDD-418F-AF82-046CB7872ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{565D8389-AFDD-418F-AF82-046CB7872ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{565D8389-AFDD-418F-AF82-046CB7872ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU

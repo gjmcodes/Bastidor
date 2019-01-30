@@ -9,7 +9,8 @@ namespace Bastidor.Application.AutoMapper
         public ViewModelToDomainMappingProfile()
         {
             CreateMap<AddPaymentTypeViewModel, AddPaymentTypeCommand>()
-                .ConvertUsing(c => new AddPaymentTypeCommand(c.Description, c.TaxesPercentage));
+                .ConstructUsing(c => new AddPaymentTypeCommand(c.Description, c.TaxesPercentage))
+                .IgnoreAllPropertiesWithAnInaccessibleSetter();
         }
     }
 }

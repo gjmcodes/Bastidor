@@ -9,6 +9,8 @@ using Bastidor.Infra.Data.Contexts;
 using Bastidor.Domain.Payments.Repositories.Persistence;
 using Bastidor.Infra.Data.Repositories.Persistent;
 using Bastidor.Application.Services.Payments;
+using Bastidor.Domain.Core.Notifications;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bastidor.CrossCutting.IoC
 {
@@ -16,6 +18,7 @@ namespace Bastidor.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
+
             //services.AddSingleton(Mapper.Configuration);
             services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));
 
@@ -25,6 +28,9 @@ namespace Bastidor.CrossCutting.IoC
 
             //Domain Commands
             services.AddScoped<IRequestHandler<AddPaymentTypeCommand>, PaymentTypeCommandHandler>();
+
+            //Domain Notifications
+            services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
 
 
             // Infra - Data

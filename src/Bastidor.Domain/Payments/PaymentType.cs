@@ -38,7 +38,8 @@ namespace Bastidor.Domain.Payments
         private void ValidateTaxesPercentage()
         {
             RuleFor(c => c.TaxesPercentage)
-                .ExclusiveBetween(0, 100).WithMessage("Uma taxa não pode ser superior a 100 ou inferior a 0");
+                .InclusiveBetween(0, 100)
+                .WithMessage("Uma taxa não pode ser superior a 100 ou inferior a 0");
         }
     }
 }

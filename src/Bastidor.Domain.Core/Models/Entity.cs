@@ -9,6 +9,9 @@ namespace Bastidor.Domain.Core.Models
 
         public Entity()
         {
+            Id = Guid.NewGuid().ToString();
+
+            CreationDate = DateTime.Now;
             ValidationResult = new ValidationResult();
         }
 
