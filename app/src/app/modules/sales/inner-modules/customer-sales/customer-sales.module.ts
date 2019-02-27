@@ -6,10 +6,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { CustomerSalesPage } from './customer-sales.page';
+import { SalesStepsPageModule } from '../../inner-components/sales-steps/sales-steps.module';
 
 const routes: Routes = [
   {
-    path: '',
+    path: './1',
     component: CustomerSalesPage
   }
 ];
@@ -19,6 +20,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    SalesStepsPageModule,
     RouterModule.forChild(routes)
   ],
   exports:[
