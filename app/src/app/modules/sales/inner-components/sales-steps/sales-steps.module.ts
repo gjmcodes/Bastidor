@@ -7,8 +7,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { SalesStepsPage } from './sales-steps.page';
 
-import {IonicStepperModule} from 'ionic-stepper';
-
 const routes: Routes = [
   {
     path: '',
@@ -21,9 +19,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    IonicStepperModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SalesStepsPage]
+  declarations: [SalesStepsPage],
+  exports: [SalesStepsPage]
 })
 export class SalesStepsPageModule {}
