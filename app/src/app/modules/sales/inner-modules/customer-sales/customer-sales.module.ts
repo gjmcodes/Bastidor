@@ -7,10 +7,11 @@ import { IonicModule } from '@ionic/angular';
 
 import { CustomerSalesPage } from './customer-sales.page';
 import { SalesStepsPageModule } from '../../inner-components/sales-steps/sales-steps.module';
+import { SaleFormPageModule } from '../sale-form/sale-form.module';
 
 const routes: Routes = [
   {
-    path: './1',
+    path: './sales/customer-sales',
     component: CustomerSalesPage
   }
 ];
@@ -21,6 +22,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     SalesStepsPageModule,
+    SaleFormPageModule,
     RouterModule.forChild(routes)
   ],
   exports:[

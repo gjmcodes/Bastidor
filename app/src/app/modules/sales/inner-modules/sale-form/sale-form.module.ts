@@ -9,7 +9,7 @@ import { SaleFormPage } from './sale-form.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: './sales/sale-form',
     component: SaleFormPage
   }
 ];

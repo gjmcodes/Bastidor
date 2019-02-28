@@ -10,6 +10,7 @@ export class SaleFormPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("SALES FORM");
   }
 
 }

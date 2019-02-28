@@ -9,7 +9,7 @@ import { SalesStepsPage } from './sales-steps.page';
 
 const routes: Routes = [
   {
-    path: './2',
+    path: './sales/sales-steps',
     component: SalesStepsPage
   }
 ];

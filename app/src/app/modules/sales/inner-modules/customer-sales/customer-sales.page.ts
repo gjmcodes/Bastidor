@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-sales',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerSalesPage implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
   }
 
+  goNext(){
+    this.router.navigateByUrl('sales/sale-form');
+  }
 }
