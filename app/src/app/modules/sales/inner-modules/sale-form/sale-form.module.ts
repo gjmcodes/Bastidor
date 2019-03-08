@@ -6,10 +6,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { SaleFormPage } from './sale-form.page';
+import { SalesStepsPageModule } from '../../inner-components/sales-steps/sales-steps.module';
+import { CustomerSalesPageModule } from '../customer-sales/customer-sales.module';
+import { SalePaymentTypePageModule } from '../sale-payment-type/sale-payment-type.module';
 
 const routes: Routes = [
   {
-    path: './sales/sale-form',
+    path: 'sale-form',
     component: SaleFormPage
   }
 ];
@@ -19,6 +22,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    SalesStepsPageModule,
+    SalePaymentTypePageModule,
     RouterModule.forChild(routes)
   ],
   declarations: [SaleFormPage]

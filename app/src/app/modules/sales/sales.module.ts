@@ -21,8 +21,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    CustomerSalesPageModule,
     SalesStepsPageModule,
+    CustomerSalesPageModule,
     RouterModule.forChild(routes)
   ],
   declarations: [SalesPage]
