@@ -1,4 +1,4 @@
-export class paymentType{
+export class salePaymentType{
     id: string;
     name : string;
     maxMonthlyInstallments : number;
