@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Formas de Pagamento
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+
+    <ion-row>
+      <h3 style="color:gray">Nova Forma de Pagamento</h3>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Descrição</ion-label>
+          <ion-input [(ngModel)]="newPaymentType.name" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Máx. Parcelas</ion-label>
+          <ion-input [(ngModel)]="newPaymentType.maxMonthlyInstallments" type="number" min="1"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <hr />
+
+    <ion-row>
+      <h3 style="color:gray">Taxas</h3>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+
+        <ion-item>
+          <ion-label position="floating">Descrição Taxa</ion-label>
+          <ion-input [(ngModel)]="newTax.description" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Valor</ion-label>
+          <ion-input [(ngModel)]="newTax.value" type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="stocked">Aplicar como Desconto</ion-label>
+          <ion-checkbox item-right [(ngModel)]="newTax.isDiscount"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4"></ion-col>
+      <ion-col size="4">
+        <ion-button item-end expand="full" (click)="addTax()">+</ion-button>
+      </ion-col>
+      <ion-col size="4"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <h3 style="color:gray">Taxas Cadastradas</h3>
+
+  <ion-list>
+    <ion-item *ngFor="let item of newPaymentType.taxes">
+      <ion-label>{{item.description}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -25,6 +25,11 @@ export class AppComponent {
       url: '/sales',
       icon: 'list'
     },
+    {
+      title: 'Formas de Pagamento',
+      url: '/payment-type/payment-type-form',
+      icon: 'list'
+    },
   ];
 
   constructor(

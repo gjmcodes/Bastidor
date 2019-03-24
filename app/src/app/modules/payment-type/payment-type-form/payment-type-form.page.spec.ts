@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SalePaymentTypePage } from './sale-payment-type.page';
+import { PaymentTypeFormPage } from './payment-type-form.page';
 
-describe('SalePaymentTypePage', () => {
-  let component: SalePaymentTypePage;
-  let fixture: ComponentFixture<SalePaymentTypePage>;
+describe('PaymentTypeFormPage', () => {
+  let component: PaymentTypeFormPage;
+  let fixture: ComponentFixture<PaymentTypeFormPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SalePaymentTypePage ],
+      declarations: [ PaymentTypeFormPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SalePaymentTypePage);
+    fixture = TestBed.createComponent(PaymentTypeFormPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

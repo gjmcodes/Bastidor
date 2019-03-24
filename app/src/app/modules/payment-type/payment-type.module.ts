@@ -9,7 +9,7 @@ import { PaymentTypePage } from './payment-type.page';
 
 const routes: Routes = [
   {
-    path: 'payment-type',
+    path: '',
     component: PaymentTypePage
   }
 ];
