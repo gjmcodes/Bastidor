@@ -19,8 +19,8 @@ const routes: Routes = [
   { path: 'sales/customer-sales', loadChildren: './modules/sales/inner-modules/customer-sales/customer-sales.module#CustomerSalesPageModule' },
   { path: 'sales/sale-form', loadChildren: './modules/sales/inner-modules/sale-form/sale-form.module#SaleFormPageModule' },
   { path: 'sales/sales-steps', loadChildren: './modules/sales/inner-components/sales-steps/sales-steps.module#SalesStepsPageModule' },
-  { path: 'payment-type/payment-type-form', loadChildren: './modules/payment-type/payment-type-form/payment-type-form.module#PaymentTypeFormPageModule' },
-  { path: 'payment-type', loadChildren: './modules/payment-type/payment-type.module#PaymentTypePageModule' }
+  { path: 'payment-type/create', loadChildren: './modules/payment-type/create/create.module#CreatePageModule' },
+  { path: 'index', loadChildren: './modules/payment-type/index/index.module#IndexPageModule' }
 ];
 
 @NgModule({

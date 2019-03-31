@@ -27,7 +27,7 @@ export class AppComponent {
     },
     {
       title: 'Formas de Pagamento',
-      url: '/payment-type/payment-type-form',
+      url: '/payment-type/create',
       icon: 'list'
     },
   ];
