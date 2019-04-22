@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>create</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form (ngSubmit)="create()">
+
+    <ion-item>
+      <ion-label>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="newProduct.name" name="Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cor</ion-label>
+      <ion-input  type="text" [(ngModel)]="newProduct.color" name="Color"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Preço de Fábrica</ion-label>
+      <ion-input type="number" min="0" step="any" [(ngModel)]="newProduct.costPrice" name="CostPrice"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Preço</ion-label>
+      <ion-input type="number" min="0" step="any" [(ngModel)]="newProduct.price" name="Price"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Quantidade</ion-label>
+      <ion-input type="number" min="1" step="1" [(ngModel)]="newProduct.amount" name="Amount"></ion-input>
+    </ion-item>
+
+    <button ion-button type="submit" block>Add</button>
+
+  </form>
+</ion-content>

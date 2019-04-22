@@ -3,6 +3,8 @@ import { CreatePaymentTypeVm } from 'src/app/modules/payment-type/view-models/cr
 import { CreatePaymentType } from 'src/app/core/features/payment-type/models/create-payment-type.model';
 import { PaymentTypeTaxVm } from 'src/app/modules/payment-type/view-models/paymentTypeTaxVm.model';
 import { PaymentTypeTax } from 'src/app/core/features/payment-type/models/payment-type-tax.model';
+import { SalePaymentType } from 'src/app/core/features/payment-type/models/sale-payment-type.model';
+import { SalePaymentViewModel } from 'src/app/modules/sales/inner-modules/sale-payment/view-models/sale-payment.viewmodel';
 
 @Injectable({
     providedIn: 'root'
@@ -18,7 +20,6 @@ export class PaymentTypeFactory {
         let taxesModels = new Array();
         vm.taxes.forEach(element => {
             let taxModel = this.mapTaxVmToModel(element);
-            debugger
             taxesModels.push(taxModel);
         });
 
@@ -39,5 +40,14 @@ export class PaymentTypeFactory {
         );
 
         return model;
+    }
+
+    mapToSalePaymentVm(model: SalePaymentType) {
+        let vm = new SalePaymentViewModel(
+            model.name,
+            model.maxMonthlyInstallments,
+            model.totalFee);
+
+        return vm;
     }
 }

@@ -35,13 +35,7 @@ export class CreatePage implements OnInit {
 
       this.resetNewTax();
 
-      this.paymentTypeService.createNewPaymentTypeAsync(this.newPaymentType)
-        .then(res => {
-          if (res.isValid)
-            alert('criado com sucesso');
-          else
-            alert('ocorreu um ou mais erros');
-        });
+
     }
   }
 
@@ -54,4 +48,17 @@ export class CreatePage implements OnInit {
     this.newTax.value = null;
   }
 
+  finish() {
+    this.paymentTypeService.createNewPaymentTypeAsync(this.newPaymentType)
+      .then(res => {
+        if (res.isValid)
+          alert('criado com sucesso');
+        else
+          alert('ocorreu um ou mais erros');
+      });
+
+      //TODO
+      //validate
+      //return to home
+  }
 }

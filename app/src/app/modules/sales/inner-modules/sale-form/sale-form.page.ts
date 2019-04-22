@@ -13,7 +13,7 @@ export class SaleFormPage implements OnInit {
 
   products: Product[];
 
-  constructor(private router : Router) {
+  constructor(private router: Router) {
 
     sessionStorage.removeItem('sales-total-value');
 
@@ -45,9 +45,12 @@ export class SaleFormPage implements OnInit {
     return sumVal;
   }
 
-  goNext(){
-    sessionStorage.setItem(SaleFormConstants.PRODUCTS_TOTAL, this.productsTotal.toString());
+  goNext() {
 
-    this.router.navigateByUrl('sales/sale-payment-type');
+    let sumVal = this.productsTotal().toString();
+    
+    sessionStorage.setItem(SaleFormConstants.PRODUCTS_TOTAL, sumVal);
+
+    this.router.navigateByUrl('sales/sale-payment');
   }
 }
