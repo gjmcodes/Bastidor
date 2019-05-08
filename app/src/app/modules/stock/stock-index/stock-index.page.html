@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Produtos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of products">
+      <ion-grid>
+        <ion-row>
+          <h2>
+            {{item.name}}
+            <ion-badge color="tertiary">
+              {{item.amount}}
+            </ion-badge>
+          </h2>
+        </ion-row>
+
+        <ion-row>
+          <ion-chip outline color="primary">
+            <ion-label>R${{item.price}}</ion-label>
+          </ion-chip>
+          <ion-chip outline color="secondary">
+            <ion-label>{{item.color}}</ion-label>
+          </ion-chip>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="8"></ion-col>
+        <ion-col size="4">
+          <ion-button type="button" color="success" expand="full" (click)="createNew()">Novo</ion-button>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

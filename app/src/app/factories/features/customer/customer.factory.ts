@@ -1,10 +1,4 @@
 import { Injectable } from '@angular/core';
-import { CreatePaymentTypeVm } from 'src/app/modules/payment-type/view-models/createPaymentTypeVm.model';
-import { CreatePaymentType } from 'src/app/core/features/payment-type/models/create-payment-type.model';
-import { PaymentTypeTaxVm } from 'src/app/modules/payment-type/view-models/paymentTypeTaxVm.model';
-import { PaymentTypeTax } from 'src/app/core/features/payment-type/models/payment-type-tax.model';
-import { SalePaymentType } from 'src/app/core/features/payment-type/models/sale-payment-type.model';
-import { SalePaymentViewModel } from 'src/app/modules/sales/inner-modules/sale-payment/view-models/sale-payment.viewmodel';
 import { CreateCustomerVm } from 'src/app/modules/customer/view-models/createCustomerVm.viewmodel';
 import { CreateCustomer } from 'src/app/core/features/customer/models/createCustomer.model';
 import { Gender } from 'src/app/core/features/customer/models/gender.model';

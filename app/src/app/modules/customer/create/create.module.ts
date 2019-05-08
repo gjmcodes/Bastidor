@@ -9,8 +9,9 @@ import { CreatePage } from './create.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: CreatePage
+    path: 'customer/create',
+    component: CreatePage,
+    loadChildren: './create.module#CreatePageModule'
   }
 ];
 
@@ -23,4 +24,4 @@ const routes: Routes = [
   ],
   declarations: [CreatePage]
 })
-export class CreatePageModule {}
+export class CreatePageModule { }

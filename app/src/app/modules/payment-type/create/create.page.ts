@@ -28,14 +28,11 @@ export class CreatePage implements OnInit {
 
       let tax = new PaymentTypeTaxVm();
       tax.description = this.newTax.description;
-      tax.isDiscount = this.newTax.isDiscount;
       tax.value = this.newTax.value;
 
       this.newPaymentType.addTax(tax);
 
       this.resetNewTax();
-
-
     }
   }
 
@@ -44,21 +41,22 @@ export class CreatePage implements OnInit {
   }
   resetNewTax() {
     this.newTax.description = "";
-    this.newTax.isDiscount = false;
     this.newTax.value = null;
   }
 
   finish() {
     this.paymentTypeService.createNewPaymentTypeAsync(this.newPaymentType)
       .then(res => {
-        if (res.isValid)
+        if (res.isValid) {
           alert('criado com sucesso');
+          this.newPaymentType = new CreatePaymentTypeVm();
+        }
         else
           alert('ocorreu um ou mais erros');
       });
 
-      //TODO
-      //validate
-      //return to home
+    //TODO
+    //validate
+    //return to home
   }
 }

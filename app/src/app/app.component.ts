@@ -22,12 +22,27 @@ export class AppComponent {
     },
     {
       title: 'Vendas',
-      url: '/sales',
+      url: '/sales/sale-customer-data',
       icon: 'list'
     },
     {
       title: 'Formas de Pagamento',
       url: '/payment-type/create',
+      icon: 'list'
+    },
+    {
+      title: 'Clientes',
+      url: '/customer/create-customer',
+      icon: 'list'
+    },
+    {
+      title: 'Precificação',
+      url: '/pricing/configurations',
+      icon: 'list'
+    },
+    {
+      title: 'Estoque',
+      url: '/stock/stock-index',
       icon: 'list'
     },
   ];

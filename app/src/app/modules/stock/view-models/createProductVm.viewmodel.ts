@@ -4,4 +4,5 @@ export class CreateProductVm {
     price: number;
     costPrice: number;
     amount: number;
+    size : string;
 }
