@@ -6,8 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { SaleCustomerDataPage } from './sale-customer-data.page';
-import { CreatePageModule } from '../../customer/create/create.module';
-import { TestPageModule } from '../../customer/test/test.module';
+import { CreateCustomerPageModule } from '../../customer/create-customer/create-customer.module';
 
 const routes: Routes = [
   {
@@ -21,7 +20,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    CreatePageModule,
+    CreateCustomerPageModule,
     RouterModule.forChild(routes)
   ],
   declarations: [SaleCustomerDataPage]

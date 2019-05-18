@@ -21,5 +21,22 @@ export class PaymentTypeService {
 
     return result;
   }
-}
 
+  async getPaymentTypesAsync(): Promise<OperationResult> {
+    let paymentTypes = await this.paymentTypeDataService.getPaymentTypesForIndexAsync();
+
+    let vms = new Array();
+
+    paymentTypes.forEach(element => {
+
+      let vm = this.paymentTypeFactory.mapToIndexSalePaymentVm(element);
+      vms.push(vm);
+    });
+
+    let opsResult = new OperationResult();
+    opsResult.isValid = true;
+    opsResult.returnObject = vms;
+    return opsResult;
+  }
+
+}

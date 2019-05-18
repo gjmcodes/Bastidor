@@ -5,13 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TestPage } from './test.page';
+import { CreateGenericCustomerPage } from './create-generic-customer.page';
 
 const routes: Routes = [
   {
-    path: 'customer/test',
-    component: TestPage,
-    loadChildren: './test.module#TestPageModule'
+    path: 'customer/create-generic-customer',
+    component: CreateGenericCustomerPage,
+    loadChildren: './create-generic-customer.module#CreateGenericCustomerPageModule'
   }
 ];
 
@@ -22,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [TestPage]
+  declarations: [CreateGenericCustomerPage]
 })
-export class TestPageModule {}
+export class CreateGenericCustomerPageModule { }

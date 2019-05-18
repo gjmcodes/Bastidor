@@ -26,13 +26,8 @@ export class AppComponent {
       icon: 'list'
     },
     {
-      title: 'Formas de Pagamento',
-      url: '/payment-type/create',
-      icon: 'list'
-    },
-    {
       title: 'Clientes',
-      url: '/customer/create-customer',
+      url: '/customer/index-customer',
       icon: 'list'
     },
     {

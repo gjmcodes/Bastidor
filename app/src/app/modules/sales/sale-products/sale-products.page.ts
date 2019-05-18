@@ -53,4 +53,8 @@ export class SaleProductsPage implements OnInit {
 
     this.router.navigateByUrl('sales/sale-finalization');
   }
+
+  goBack(){
+    this.router.navigateByUrl('sales/sale-customer-data');
+  }
 }

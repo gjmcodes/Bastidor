@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { CreatePaymentTypeVm } from '../view-models/createPaymentTypeVm.model';
-import { PaymentTypeService } from '../services/payment-type.service';
 import { PaymentTypeTaxVm } from '../view-models/paymentTypeTaxVm.model';
+import { PaymentTypeService } from '../services/payment-type.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-create',
-  templateUrl: './create.page.html',
-  styleUrls: ['./create.page.scss'],
+  selector: 'app-create-payment-type',
+  templateUrl: './create-payment-type.page.html',
+  styleUrls: ['./create-payment-type.page.scss'],
 })
-export class CreatePage implements OnInit {
+export class CreatePaymentTypePage implements OnInit {
 
   newPaymentType: CreatePaymentTypeVm;
   newTax: PaymentTypeTaxVm;
 
-
-  constructor(private paymentTypeService: PaymentTypeService) {
+  constructor(private paymentTypeService: PaymentTypeService,
+    private router: Router) {
     this.newPaymentType = new CreatePaymentTypeVm();
     this.newTax = new PaymentTypeTaxVm();
   }
-
   ngOnInit() {
   }
 
@@ -58,5 +58,10 @@ export class CreatePage implements OnInit {
     //TODO
     //validate
     //return to home
+      this.returnPricingPage();
+  }
+
+  returnPricingPage(){
+    this.router.navigateByUrl('pricing/configurations');
   }
 }

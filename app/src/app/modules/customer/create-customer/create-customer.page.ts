@@ -4,11 +4,11 @@ import { CustomerService } from '../services/customer.service';
 import { GenderVm } from '../view-models/genderVm.viewmodel';
 
 @Component({
-  selector: 'app-create',
-  templateUrl: './create.page.html',
-  styleUrls: ['./create.page.scss'],
+  selector: 'app-create-customer',
+  templateUrl: './create-customer.page.html',
+  styleUrls: ['./create-customer.page.scss'],
 })
-export class CreatePage implements OnInit {
+export class CreateCustomerPage implements OnInit {
 
   newCustomer: CreateCustomerVm;
   genders: GenderVm[];

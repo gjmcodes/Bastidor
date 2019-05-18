@@ -14,26 +14,30 @@
 
   <ion-grid>
 
+
     <ion-row>
       <ion-col size="12">
         <ion-item id="searchField">
           <ion-label position="floating">CPF do Cliente</ion-label>
-          <ion-input  maxlength="11" type="text" [(ngModel)]="nationalIdInput" (ngModelChange)="checkNationalIdLength()" ></ion-input>
+          <ion-input maxlength="11" type="text" [(ngModel)]="nationalIdInput" (ngModelChange)="checkNationalIdLength()">
+          </ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
 
+
     <ion-row>
       <ion-col size="8"></ion-col>
       <ion-col size="4">
-        <ion-button [disabled]="newCustomerEnabled ? false : true" color="success" expand="full" (click)="openNewCustomerModalPageAsync()">
+        <ion-button [disabled]="newCustomerEnabled ? false : true" color="success" expand="full"
+          (click)="openNewCustomerModalPageAsync()">
           <ion-icon name="person-add"></ion-icon>
         </ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col size="12" >
+      <ion-col size="12">
         <ion-item>
           <ion-label position="floating">Nome</ion-label>
           <ion-input disabled type="text" [(ngModel)]="customerDataSearch.fullName"></ion-input>
@@ -51,11 +55,11 @@
 
 
       <ion-col size="12" size-sm="12" size-md="6" size-lg="6" size-xl="6">
-          <ion-item>
-            <ion-label position="floating">Contato</ion-label>
-            <ion-input type="text" [(ngModel)]="customerDataSearch.contact"></ion-input>
-          </ion-item>
-        </ion-col>
+        <ion-item>
+          <ion-label position="floating">Contato</ion-label>
+          <ion-input type="text" [(ngModel)]="customerDataSearch.contact"></ion-input>
+        </ion-item>
+      </ion-col>
     </ion-row>
 
 
@@ -68,7 +72,9 @@
       <ion-row>
         <ion-col size="8"></ion-col>
         <ion-col size="4">
-          <ion-button expand="full" (click)="goNext()">Ok</ion-button>
+          <ion-button small icon-only color="primary" expand="full" (click)="goNext()">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+          </ion-button>
         </ion-col>
 
       </ion-row>

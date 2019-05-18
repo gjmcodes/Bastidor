@@ -57,4 +57,29 @@ export class PaymentTypeDataService {
 
     return payments;
   }
+
+  async getPaymentTypesForIndexAsync(): Promise<SalePaymentType[]> {
+    let _arr = JSON.parse(sessionStorage.getItem('payment-type'));
+    let payments = new Array();
+
+    if (_arr == null)
+      return payments;
+
+    for (var i = 0; i < _arr.length; i++) {
+      var counter = _arr[i];
+      let model = new SalePaymentType();
+
+      //TODO
+      //Remover 
+      model.id = (i + 1).toString();
+      model.maxMonthlyInstallments = counter.maxMonthlyInstallments;
+      model.name = counter.name;
+      model.totalFee = 10;
+      model.hasDiscount = true;
+
+      payments.push(model);
+    }
+
+    return payments;
+  }
 }

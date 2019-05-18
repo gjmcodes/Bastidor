@@ -5,12 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { IndexPage } from './index.page';
+import { CreateCustomerPage } from './create-customer.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: IndexPage
+    path: 'customer/create-customer',
+    component: CreateCustomerPage,
+    loadChildren: './create-customer.module#CreateCustomerPageModule'
   }
 ];
 
@@ -21,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [IndexPage]
+  declarations: [CreateCustomerPage]
 })
-export class IndexPageModule {}
+export class CreateCustomerPageModule {}

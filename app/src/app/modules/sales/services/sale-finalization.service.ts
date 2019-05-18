@@ -29,4 +29,14 @@ export class SaleFinalizationService {
 
     return opResult;
   }
+
+  setAnonymousSaleConfiguration(anonCustomer : boolean){
+    sessionStorage.setItem('anon-customer', anonCustomer.toString())
+  }
+
+  getAnonymousSaleConfiguration() : boolean{
+    let value = sessionStorage.getItem('anon-customer');
+    
+    return value == null || value == 'true';
+  }
 }
