@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'sales/sale-finalization', loadChildren: './modules/sales/sale-finalization/sale-finalization.module#SaleFinalizationPageModule' },
   { path: 'pricing/configurations', loadChildren: './modules/pricing/pricing.module#PricingPageModule' },
   { path: 'pricing/create-payment-type', loadChildren: './modules/pricing/create-payment-type/create-payment-type.module#CreatePaymentTypePageModule' },
+  { path: 'sale-wrap', loadChildren: './modules/sales/sale-wrap/sale-wrap.module#SaleWrapPageModule' },
 ];
 
 @NgModule({

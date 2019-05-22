@@ -5,13 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SaleFinalizationPage } from './sale-finalization.page';
-import { CreateGenericCustomerPageModule } from '../../customer/create-generic-customer/create-generic-customer.module';
+import { SaleWrapPage } from './sale-wrap.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: SaleFinalizationPage
+    component: SaleWrapPage
   }
 ];
 
@@ -20,9 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    CreateGenericCustomerPageModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SaleFinalizationPage]
+  declarations: [SaleWrapPage]
 })
-export class SaleFinalizationPageModule {}
+export class SaleWrapPageModule {}

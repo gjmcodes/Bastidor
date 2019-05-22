@@ -33,8 +33,8 @@ export class SaleCustomerDataPage implements OnInit {
   goNext() {
 
 
-    if (this.formIsFilled()) {
-      this.saleFinalizationService.setAnonymousSaleConfiguration(false);
+    if (this.customerIsFilled()) {
+      this.saleFinalizationService.setSaleCustomerData(this.customerDataSearch);
       this.routeToSalesProducts();
     } else {
       this.openNonIdentifiedCustomerModalAsync();
@@ -52,12 +52,12 @@ export class SaleCustomerDataPage implements OnInit {
     }
   }
 
-  formIsFilled() : boolean{
-    return this.customerDataSearch != null
-    && (this.customerDataSearch.email != null && this.customerDataSearch.email != '')
-    && (this.customerDataSearch.fullName != null && this.customerDataSearch.fullName != '')
-    && (this.customerDataSearch.contact != null && this.customerDataSearch.contact != '')
+  customerIsFilled(){
+    return this.customerDataSearch != null 
+    && this.customerDataSearch.customerId != null
+    && this.customerDataSearch.customerId != '';
   }
+
   async searchCustomerAsync() {
     let result = await this.saleCustomerDataService.searchCustomerByNationalIdAsync(this.nationalIdInput);
     if (result.isValid) {
@@ -93,7 +93,6 @@ export class SaleCustomerDataPage implements OnInit {
         text: 'Sim',
         icon: 'checkmark',
         handler: () => {
-          this.saleFinalizationService.setAnonymousSaleConfiguration(true);
           this.routeToSalesProducts();
         }
       }]

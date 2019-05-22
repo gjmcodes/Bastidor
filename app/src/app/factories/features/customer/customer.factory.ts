@@ -5,6 +5,9 @@ import { Gender } from 'src/app/core/features/customer/models/gender.model';
 import { GenderVm } from 'src/app/modules/customer/view-models/genderVm.viewmodel';
 import { CreateGenericCustomer } from 'src/app/core/features/customer/models/createGenericCustomer.model';
 import { CreateGenericCustomerVm } from 'src/app/modules/customer/view-models/createGenericCustomerVm.viewmodel';
+import { SaleCustomerDataViewModel } from 'src/app/modules/sales/view-models/saleCustomerDataVm.viewmodel';
+import { CustomerDataSearchViewModel } from 'src/app/modules/sales/view-models/customerDataSearchVm.viewmodel';
+import { SaleCustomer } from 'src/app/core/features/sale/models/saleCustomer.model';
 
 @Injectable({
     providedIn: 'root'
@@ -53,6 +56,19 @@ export class CustomerFactory {
         });
 
         return gendersVm;
+    }
+
+    mapCustomerDataSearchToSaleCustomer(customerDataSearchViewModel : CustomerDataSearchViewModel) 
+    : SaleCustomer{
+        let customerData = new SaleCustomer
+        (
+            customerDataSearchViewModel.customerId,
+            customerDataSearchViewModel.fullName,
+            customerDataSearchViewModel.email,
+            customerDataSearchViewModel.contact
+        );
+
+        return customerData;
     }
 
 }

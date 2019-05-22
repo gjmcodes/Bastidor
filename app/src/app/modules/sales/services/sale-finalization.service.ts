@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { OperationResult } from 'src/app/core/cross-cutting/application/operation-result.model';
 import { PaymentTypeFactory } from 'src/app/factories/features/payment-type/payment-type.factory';
 import { PaymentTypeDataService } from 'src/app/core/features/payment-type/data/payment-type-data.service';
+import { CustomerDataSearchViewModel } from '../view-models/customerDataSearchVm.viewmodel';
+import { CustomerFactory } from 'src/app/factories/features/customer/customer.factory';
+import { SaleCustomer } from 'src/app/core/features/sale/models/saleCustomer.model';
+import { SaleFinalizationViewModel } from '../view-models/saleFinalizationVm.viewmodel';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +13,8 @@ import { PaymentTypeDataService } from 'src/app/core/features/payment-type/data/
 export class SaleFinalizationService {
 
   constructor(private paymentTypeDataService: PaymentTypeDataService,
-    private paymentTypeFactory: PaymentTypeFactory) { }
+    private paymentTypeFactory: PaymentTypeFactory,
+    private customerFactory: CustomerFactory) { }
 
 
   async getSalePamentTypeAsync(): Promise<OperationResult> {
@@ -30,13 +35,27 @@ export class SaleFinalizationService {
     return opResult;
   }
 
-  setAnonymousSaleConfiguration(anonCustomer : boolean){
-    sessionStorage.setItem('anon-customer', anonCustomer.toString())
+  setSaleCustomerData(saleSearchCustomerData: CustomerDataSearchViewModel) {
+
+    let customerData = this.customerFactory.mapCustomerDataSearchToSaleCustomer(saleSearchCustomerData);
+    sessionStorage.setItem('sale-customer-data', JSON.stringify(customerData));
   }
 
-  getAnonymousSaleConfiguration() : boolean{
-    let value = sessionStorage.getItem('anon-customer');
-    
-    return value == null || value == 'true';
+  getSaleCustomerData(): SaleCustomer {
+    let value = sessionStorage.getItem('sale-customer-data');
+
+    if (value == null || value == '')
+      return null;
+
+    return JSON.parse(value)
+  }
+
+  createNewSaleAsync(
+    customerId : string,
+    saleLocalId : string,
+    paymentMethodId : string,
+    paymentInstallments : number,
+    productsIds : string[]) {
+
   }
 }

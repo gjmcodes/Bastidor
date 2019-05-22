@@ -4,7 +4,7 @@ import { CreatePaymentType } from 'src/app/core/features/payment-type/models/cre
 import { PaymentTypeTaxVm } from 'src/app/modules/pricing/view-models/paymentTypeTaxVm.model';
 import { PaymentTypeTax } from 'src/app/core/features/payment-type/models/payment-type-tax.model';
 import { SalePaymentType } from 'src/app/core/features/payment-type/models/sale-payment-type.model';
-import { SalePaymentViewModel } from 'src/app/modules/sales/view-models/saleFinalizationVm.viewmodel';
+import { SalePaymentViewModel } from 'src/app/modules/sales/view-models/salePaymentVm.viewmodel';
 import { IndexPaymentTypeVm } from 'src/app/modules/pricing/view-models/indexPaymentTypeVm.models';
 
 @Injectable({

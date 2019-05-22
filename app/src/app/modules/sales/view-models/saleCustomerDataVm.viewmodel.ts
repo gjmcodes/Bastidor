@@ -1,4 +1,4 @@
-export class CustomerDataSearchViewModel {
+export class SaleCustomerDataViewModel {
     customerId : string;
     fullName: string;
     email: string;

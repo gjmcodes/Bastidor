@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { SalesConstants } from '../constants/sales.constants';
 import { SaleFinalizationService } from '../services/sale-finalization.service';
-import { SalePaymentViewModel } from '../view-models/saleFinalizationVm.viewmodel';
+import { SalePaymentViewModel } from '../view-models/salePaymentVm.viewmodel';
 import { ActionSheetController, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { CreateGenericCustomerPage } from '../../customer/create-generic-customer/create-generic-customer.page';
+import { SaleFinalizationViewModel } from '../view-models/saleFinalizationVm.viewmodel';
 
 @Component({
   selector: 'app-sale-finalization',
@@ -17,10 +18,12 @@ export class SaleFinalizationPage implements OnInit {
   finalValue: number;
   salePayments: SalePaymentViewModel[];
   selectedPaymentType: SalePaymentViewModel;
+  saleFinalization: SaleFinalizationViewModel;
+  customerId: string;
 
   constructor(private saleFinalizationService: SaleFinalizationService,
     private actionSheetController: ActionSheetController,
-    private modalController : ModalController,
+    private modalController: ModalController,
     private router: Router) { }
 
   ngOnInit() {
@@ -30,6 +33,8 @@ export class SaleFinalizationPage implements OnInit {
     this.saleFinalizationService.getSalePamentTypeAsync().then(res => {
       this.salePayments = res.returnObject;
     });
+
+    this.saleFinalization = new SaleFinalizationViewModel();
   }
 
   changeSelectedPaymentType(event: any, obj: any) {
@@ -39,16 +44,30 @@ export class SaleFinalizationPage implements OnInit {
   }
 
   finishSale() {
-    //Exibir modal de resumo
+
+    //Gerar ID local da venda.
+    const saleId = 'sale-000-01';
+    this.customerId = 'customer-0001';
+    let paymentMethodId = 'method-1';
+    let paymentInstallments = 0;
+    let productsIds = new Array();
+
+    //gerar viewmodel de finalização da página
 
     //Verificar se a venda é anônima
-    const isAnonymousSale = this.saleFinalizationService.getAnonymousSaleConfiguration();
+    const saleCustomerData = this.saleFinalizationService.getSaleCustomerData();
 
-    alert('finish sale!');
-
-    if (isAnonymousSale) {
+    if (saleCustomerData == null) {
       this.openGenericCustomerAlertAsync();
+      //obter ID do customer após salvar modal
     }
+    this.saleFinalizationService.createNewSaleAsync(
+      this.customerId,
+      saleId,
+      paymentMethodId,
+      paymentInstallments,
+      productsIds
+    );
   }
 
   async openGenericCustomerAlertAsync() {
@@ -70,12 +89,17 @@ export class SaleFinalizationPage implements OnInit {
     await actionSheet.present();
   }
 
-  async openGenericCustomerModal(){
+  async openGenericCustomerModal() {
     const modal = await this.modalController.create({
       component: CreateGenericCustomerPage
     });
 
+    modal.onDidDismiss().then(data => {
+      console.log(data);
+    });
+
+
     return await modal.present();
-  
+
   }
 }
