@@ -1,5 +1,5 @@
 ﻿using Bastidor.Domain.Sales;
-using Bastidor.Infra.Data.Contexts;
+using Bastidor.Infra.Data.Migrations.Contexts;
 using System;
 
 namespace Bastidor.ConsoleTest

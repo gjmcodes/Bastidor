@@ -45,7 +45,7 @@ namespace Bastidor.Domain.Payments.Commands
 
             //Validar regras de negócio
 
-            _paymentTypePersistentRepository.Add(paymentType);
+            await _paymentTypePersistentRepository.AddAsync(paymentType);
 
             if(await CommitAsync())
             {

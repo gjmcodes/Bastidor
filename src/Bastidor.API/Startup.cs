@@ -15,7 +15,6 @@ using Bastidor.API.Configurations;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using MediatR;
-using Bastidor.Infra.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bastidor.API
@@ -44,7 +43,6 @@ namespace Bastidor.API
 
             services.AddDependencyInjection();
 
-            services.AddDbContext<BastidorContext>(o => o.UseMySql(Configuration.GetConnectionString("BastidorDB")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

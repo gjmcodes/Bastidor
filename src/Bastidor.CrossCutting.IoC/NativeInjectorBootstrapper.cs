@@ -4,13 +4,9 @@ using Bastidor.Domain.Interfaces;
 using Bastidor.Domain.Payments.Commands;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
-using Bastidor.Infra.Data.UoW;
-using Bastidor.Infra.Data.Contexts;
 using Bastidor.Domain.Payments.Repositories.Persistence;
-using Bastidor.Infra.Data.Repositories.Persistent;
 using Bastidor.Application.Services.Payments;
 using Bastidor.Domain.Core.Notifications;
-using Microsoft.EntityFrameworkCore;
 
 namespace Bastidor.CrossCutting.IoC
 {
@@ -34,9 +30,6 @@ namespace Bastidor.CrossCutting.IoC
 
 
             // Infra - Data
-            services.AddScoped<BastidorContext>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IPaymentTypePersistentRepository, PaymentTypePersistentRepository>();
 
             // Application
             services.AddScoped<IPaymentAppService, PaymentAppService>();

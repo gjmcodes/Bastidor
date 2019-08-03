@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Bastidor.Infra.Data\Bastidor.Infra.Data.csproj" />
+    <ProjectReference Include="..\Bastidor.Infra.Data.Migrations\Bastidor.Infra.Data.Migrations.csproj" />
   </ItemGroup>
 
 </Project>

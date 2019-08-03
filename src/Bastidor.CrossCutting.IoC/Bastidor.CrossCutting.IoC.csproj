@@ -13,7 +13,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Bastidor.Application\Bastidor.Application.csproj" />
     <ProjectReference Include="..\Bastidor.Domain\Bastidor.Domain.csproj" />
-    <ProjectReference Include="..\Bastidor.Infra.Data\Bastidor.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>
