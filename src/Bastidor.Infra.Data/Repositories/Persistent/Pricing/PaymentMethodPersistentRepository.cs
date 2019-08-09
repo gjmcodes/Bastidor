@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
 using System.Threading.Tasks;
+using Bastidor.Domain.Pricings.Models;
+using Bastidor.Domain.Pricings.Repositoires.Persistent;
 using Dapper;
 
 public class PaymentMethodPersistentRepository : BasePersistentRepository, IPaymentMethodPersistentRepository
@@ -10,7 +11,7 @@ public class PaymentMethodPersistentRepository : BasePersistentRepository, IPaym
     {
     }
 
-    public async Task<bool> AddAsync(PaymentMethod obj)
+    public async Task<bool> AddAsync(PricingPaymentMethod obj)
     {
         var sql = @"INSERT INTO PaymentMethods 
                 (Id, Description, MaxInstallments)
@@ -25,7 +26,7 @@ public class PaymentMethodPersistentRepository : BasePersistentRepository, IPaym
         return result > 0;
     }
 
-    public async Task<bool> AddTaxesAsync(IEnumerable<PaymentMethodTax> taxes)
+    public async Task<bool> AddTaxesAsync(IEnumerable<PricingPaymentMethodTax> taxes)
     {
         var sql = @"INSERT INTO PaymentMethodTaxes
         (Id, Description, TaxValue)
@@ -40,8 +41,4 @@ public class PaymentMethodPersistentRepository : BasePersistentRepository, IPaym
         return result > 0;
     }
 
-    public Task<bool> AddTaxesAsync(string paymentMethodId, IEnumerable<PaymentMethodTax> taxes)
-    {
-        throw new System.NotImplementedException();
-    }
 }

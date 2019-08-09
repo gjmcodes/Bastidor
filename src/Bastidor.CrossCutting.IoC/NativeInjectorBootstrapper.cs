@@ -30,6 +30,8 @@ namespace Bastidor.CrossCutting.IoC
 
 
             // Infra - Data
+            services.AddScoped<IUnitOfWork, UoW>();
+
 
             // Application
             services.AddScoped<IPaymentAppService, PaymentAppService>();

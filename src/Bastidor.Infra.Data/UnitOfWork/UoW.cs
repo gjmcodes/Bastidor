@@ -3,6 +3,7 @@ using System.Data.Common;
 using System.Threading;
 using System.Threading.Tasks;
 using Bastidor.Domain.Interfaces;
+using Bastidor.Domain.Pricings.Repositoires.Persistent;
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
 
@@ -12,11 +13,13 @@ public class UoW : IUnitOfWork, IDisposable
     private MySqlTransaction mySqlTransaction;
     private IConfiguration configuration;
 
+    public UoW(IConfiguration configuration)
+    {
+        this.configuration = configuration;
+    }
 
-    private IPaymentMethodPersistentRepository _paymentMethodPersistentRepository;
-    public IPaymentMethodPersistentRepository PaymentMethodPersistentRepository => _paymentMethodPersistentRepository == null ?
-     new PaymentMethodPersistentRepository(mySqlTransaction) : _paymentMethodPersistentRepository;
-    
+    public IPaymentMethodPersistentRepository PaymentMethodPersistentRepository => new PaymentMethodPersistentRepository(mySqlTransaction);
+    public IProductProfitPersistentRepository ProductProfitPersistentRepository => new ProductProfitPersistentRepository(mySqlTransaction);
     public async Task<DbTransaction> BeginTransactionAsync(CancellationToken cancellationToken)
     {
         if (mySqlTransaction != null)
@@ -48,8 +51,18 @@ public class UoW : IUnitOfWork, IDisposable
         }
     }
 
+    void DisposeRepositories()
+    {
+        if (PaymentMethodPersistentRepository != null)
+            PaymentMethodPersistentRepository.Dispose();
+
+        if (ProductProfitPersistentRepository != null)
+            ProductProfitPersistentRepository.Dispose();
+    }
+
     public void Dispose()
     {
+        DisposeRepositories();
         mySqlConnection.Dispose();
         GC.SuppressFinalize(this);
     }
